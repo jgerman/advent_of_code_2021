@@ -1,5 +1,4 @@
 (ns jgerman.advent-of-code-2021
-  (:gen-class)
   (:require [clojure.java.io :as io]))
 
 (defn resource->edn [resource]
