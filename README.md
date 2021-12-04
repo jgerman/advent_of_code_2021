@@ -1,6 +1,23 @@
 # advent_of_code_2021
 
-Repo for advent of code 2021 in clojure
+Repo for advent of code 2021 in clojure. I assumed that each day would build on
+the previous but 3 days in and I'm realizing that wasn't the case. So for now
+I'm putting code for each day in it's own ns with very little shared code
+between.
+
+Code is copied from previous days where useful instead of moving into a common
+place, since I don't know when it might need to change in a way that would break
+the answer for an earlier day.
+
+In some cases (it's happened on day 2 already) the ask is to change the code in
+task 2 that is required to get the correct answer for task 1, so occasionally
+functions may get copied within a file as well.
+
+For the most part there's a comment block at the bottom of each day that has
+`tests` for the correct answers. I'm doing this instead of actual test
+namespaces for simplicity, it might be worthwhile to move them all to actual
+test files later... I'm writing this on day three, so who knows what will happen
+by the end.
 
 ## Installation
 
