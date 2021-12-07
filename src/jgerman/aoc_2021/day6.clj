@@ -25,7 +25,6 @@
 (defn sim [fish steps]
   (loop [fs fish
          idx 0]
-    (tap> fs)
     (if (= idx steps)
       fs
       (recur (step fs) (inc idx)))))
