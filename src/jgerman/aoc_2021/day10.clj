@@ -72,7 +72,6 @@
        (map ac-scores)
        final-ac-score))
 
-
 (comment
   (= 240123 (task-1))
   (= 3260812321 (task-2))
