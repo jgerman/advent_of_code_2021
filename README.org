@@ -1,0 +1,56 @@
+* advent_of_code_2021
+
+Repo for advent of code 2021 in clojure. I assumed that each day would build on
+the previous but 3 days in and I'm realizing that wasn't the case. So for now
+I'm putting code for each day in it's own ns with very little shared code
+between.
+
+Code is copied from previous days where useful instead of moving into a common
+place, since I don't know when it might need to change in a way that would break
+the answer for an earlier day.
+
+In some cases (it's happened on day 2 already) the ask is to change the code in
+task 2 that is required to get the correct answer for task 1, so occasionally
+functions may get copied within a file as well.
+
+For the most part there's a comment block at the bottom of each day that has
+`tests` for the correct answers. I'm doing this instead of actual test
+namespaces for simplicity, it might be worthwhile to move them all to actual
+test files later... I'm writing this on day three, so who knows what will happen
+by the end.
+
+** Installation
+
+Download from https://github.com/jgerman/advent_of_code_2021
+
+
+** Days
+
+It occurred to me after the fact that I should have kept notes on each day, this
+is day 11, so I'll start there and maybe go back and add the rest.
+
+*** Day 8
+
+This solution is a mess, it worked but it took far too long, is hard to read,
+fragile, and embarrassing. This is the result of trying to crank something out
+after a long day of work and when I wasn't in the right mindset. Stepping away
+from the machine would have been smart... rather than just bashing through step
+by step.
+
+Conceptually it's simple, given certain knowns you can find everything else.
+Even though the execution time would take longer I feel like using core.logic
+(or something similar), or implementing enough of it to just state the facts and
+let the rules fire would be the cleanest way to solve the problem.
+
+This is high on the list to come back and redo.
+
+
+*** Day 11
+
+This was pretty easy, I spent some time looking for a function in core.matrix to
+give me all the locations that matched a predicate. I couldn't find it but I
+can't imagine it doesn't exist.
+
+For both tasks I just recurred over the steps and returned a map with the state
+and whatever I needed to track, but I think this could be better handled by
+using a lazy sequence. So when I go back to write it that's what I'll likely do.
