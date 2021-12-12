@@ -54,3 +54,5 @@ can't imagine it doesn't exist.
 For both tasks I just recurred over the steps and returned a map with the state
 and whatever I needed to track, but I think this could be better handled by
 using a lazy sequence. So when I go back to write it that's what I'll likely do.
+
+*** Day 12

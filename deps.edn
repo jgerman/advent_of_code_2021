@@ -1,6 +1,24 @@
+;; haven't nailed this down 100% yet but to hotload
+;; add your new dep
+;; uncomment the ns declaration
+;; evaluate it (if a new session)
+;; uncomment the add-libs line
+;; slurp in the map of deps
+;; add a backtick to the start of the deps map
+;; eval the expression
+;; should be good to go, remove the tick, barf the map out, comment out add-libs
+;; no reason I shouldn't be able to add this to auto gen, and no reason this can't be an emacs command
+;; once I've verified it works
+
+#_(ns deps.edn
+  (:require [clojure.tools.deps.alpha.repl :as repl]))
+
 {:paths ["src" "resources"]
- :deps {org.clojure/clojure {:mvn/version "1.10.3"}
-        net.mikera/core.matrix {:mvn/version "0.62.0"}}
+ :deps
+ #_(repl/add-libs)
+ {org.clojure/clojure {:mvn/version "1.10.3"}
+  net.mikera/core.matrix {:mvn/version "0.62.0"}
+  aysylu/loom {:mvn/version "1.0.2"}}
  :aliases
  {:run-m {:main-opts ["-m" "jgerman.advent-of-code-2021"]}
   :run-x {:ns-default jgerman.advent-of-code-2021
