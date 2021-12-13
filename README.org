@@ -78,3 +78,7 @@ only and moving on.. .probably some sort of moral in that story...
 Reminder for when I come back to it: The performance isn't great, I think that's
 probably down to the mapcat in the recursion. I couldn't get it all in a single
 list and I didn't want to fight with it, so that's a spot to revisit.
+
+*** Day 13
+
+Super easy, just map over the coords doing the transforms then plot out the points.

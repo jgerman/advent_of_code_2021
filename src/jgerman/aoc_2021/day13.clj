@@ -22,19 +22,18 @@
       parts->input
       input->ints))
 
-
 (defn fold-x [paper coord]
   (map (fn [[x y]]
-         [(if (< x coord) (+ coord
-                             (- coord x)) x)
+         [(if (< coord x) (- coord
+                             (- x coord)) x)
           y])
        paper))
 
 (defn fold-y [paper coord]
   (map (fn [[x y]]
          [x
-          (if (< y coord) (+ coord
-                             (- coord y)) y)])
+          (if (< coord y) (- coord
+                             (- y coord)) y)])
        paper))
 
 (defn fold [paper [fold-axis coord]]
@@ -61,22 +60,28 @@
 (defn max-y [pts] (apply max (map second pts)))
 
 (defn plot-it [paper]
-  true)
+  (let [max-x (max-x paper)
+        max-y (max-y paper)]
+    (doseq [y (range 0 (inc max-y))]
+      (doseq [x (range 0 (inc max-x))]
+        (if (some #{[x y]} paper)
+          (print "X")
+          (print " ")))
+      (println ""))))
 
 (defn task-2 [resource]
   (-> resource
       resource->input
-      fold-it
-      plot-it))
-
+      fold-it))
 
 (comment
   (resource->input "day13_sample.txt")
   (map inc #{1 2})
 
   (= 17 (count (task-1 "day13_sample.txt" 1)))
+  (= 704 (count (task-1 "day13_input.txt" 1)))
 
-  (count (task-1 "day13_input.txt" 1))
-  (task-2 "day13_input.txt")
+  ;; plot should read HGAJBEHC
+  (plot-it (task-2 "day13_input.txt"))
   ;;marker
   )
