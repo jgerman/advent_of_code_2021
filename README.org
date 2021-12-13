@@ -56,3 +56,21 @@ and whatever I needed to track, but I think this could be better handled by
 using a lazy sequence. So when I go back to write it that's what I'll likely do.
 
 *** Day 12
+
+I played with Loom a little bit before deciding to just code it up and boy did I
+make a mess when I first did it. So much so that task two caused me issues,
+depspite it just being a simple logic check.
+
+Some lessons learned:
+
+- Sitting on the couch with a laptop watching football is not the ideal way to solve a puzzle.
+- Stop getting cute with the problems.
+
+As soon as I went downstairs away from distractions, I re-wrote the traversal
+algorithm in a few minutes. I think there's still a few left over things that I
+didn't clean up, but in the end I wound up starting over for task 2 and
+refactoring task 1 to use that code.
+
+I really made things hard to reason about by looking at the children and trying
+to decide if they were worth considering, instead of looking at the current node
+only and moving on.. .probably some sort of moral in that story...

@@ -25,11 +25,6 @@
   (not (every? #(< % limit) (vals (frequencies (filter #(not (big-cave? %)) p))))))
 
 (defn can-add? [current-path small-limit node]
-  (when (= current-path ["start" "b" "d" "b" "A"])
-    (tap> {:current-path current-path
-           :node node
-           :not-used-twice? (not (small-cave-limit? current-path small-limit))
-           :already-there? (some #{node} current-path)}))
   (cond
     (big-cave? node) true
     (and (= node "start")
@@ -45,11 +40,6 @@
   ([g small-limit paths current-path node]
    (let [add? (can-add? current-path small-limit node)
          children (get g node)]
-     (when (= current-path ["start" "b" "d" "b" "A"])
-       (tap> {:paths paths
-              :current-path current-path
-              :node node
-              :add? add?}))
      (cond
        (= node "end") (conj paths (conj current-path node)) ;; not striclty necessary to add the end
        (not add?) paths
