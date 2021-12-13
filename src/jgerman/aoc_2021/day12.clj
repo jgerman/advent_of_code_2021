@@ -36,7 +36,7 @@
 
 (defn path-search
   ([g small-limit]
-   (path-search g small-limit [] [] "start"))
+   (path-search g small-limit nil [] "start"))
   ([g small-limit paths current-path node]
    (let [add? (can-add? current-path small-limit node)
          children (get g node)]
@@ -56,8 +56,6 @@
       (path-search 2)))
 
 (comment
-  (def sample (resource->input "day12_sample1.txt"))
-
   (= 10 (count (task-1 "day12_sample1.txt")))
   (= 19 (count (task-1 "day12_sample2.txt")))
   (= 226 (count (task-1 "day12_sample3.txt")))

@@ -74,3 +74,7 @@ refactoring task 1 to use that code.
 I really made things hard to reason about by looking at the children and trying
 to decide if they were worth considering, instead of looking at the current node
 only and moving on.. .probably some sort of moral in that story...
+
+Reminder for when I come back to it: The performance isn't great, I think that's
+probably down to the mapcat in the recursion. I couldn't get it all in a single
+list and I didn't want to fight with it, so that's a spot to revisit.
