@@ -21,46 +21,29 @@
 (defn big-cave? [n]
   (every? #(Character/isUpperCase %) n))
 
-(defn get-children [g current-path node]
-  (let [children (get g node)]
-    (filter (fn [n]
-              (or (big-cave? n)
-                  (not (some #{n} current-path)))) children)))
+(defn small-cave-limit? [p limit]
+  (not (every? #(< % limit) (vals (frequencies (filter #(not (big-cave? %)) p))))))
 
-(defn find-paths
-  ([g]
-   (find-paths g [] [] "start"))
-  ([g paths current-path node]
-   (let [children (get-children g current-path node)
-         current-path (conj current-path node)]
-     (cond
-       (= node "end") (conj paths current-path)
-       :else (mapcat (partial find-paths g paths current-path) children)))))
-
-(defn used-twice? [p]
-  (not (every? #(= 1 %) (vals (frequencies (filter #(not (big-cave? %)) p))))))
-
-(defn can-add? [current-path node]
+(defn can-add? [current-path small-limit node]
   (when (= current-path ["start" "b" "d" "b" "A"])
     (tap> {:current-path current-path
            :node node
-           :not-used-twice? (not (used-twice? current-path))
+           :not-used-twice? (not (small-cave-limit? current-path small-limit))
            :already-there? (some #{node} current-path)}))
   (cond
     (big-cave? node) true
     (and (= node "start")
          (empty? current-path)) true ;; I'm sure I could do this better
     (= node "start") false
-    (= node "end") true ;; this is always ignored actually just makes path-search easier for now
-    (not (used-twice? current-path)) true
+    (not (small-cave-limit? current-path small-limit)) true
     (some #{node} current-path) false
     :else true))
 
 (defn path-search
-  ([g]
-   (path-search g [] [] "start"))
-  ([g paths current-path node]
-   (let [add? (can-add? current-path node)
+  ([g small-limit]
+   (path-search g small-limit [] [] "start"))
+  ([g small-limit paths current-path node]
+   (let [add? (can-add? current-path small-limit node)
          children (get g node)]
      (when (= current-path ["start" "b" "d" "b" "A"])
        (tap> {:paths paths
@@ -70,27 +53,25 @@
      (cond
        (= node "end") (conj paths (conj current-path node)) ;; not striclty necessary to add the end
        (not add?) paths
-       :else (mapcat (partial path-search g paths (conj current-path node)) children)))))
+       :else (mapcat (partial path-search g small-limit paths (conj current-path node)) children)))))
 
 (defn task-1 [resource]
   (-> resource
       resource->input
-      find-paths
-      count))
+      (path-search 1)))
 
 (defn task-2 [resource]
   (-> resource
       resource->input
-      path-search))
+      (path-search 2)))
 
 (comment
   (def sample (resource->input "day12_sample1.txt"))
 
-  (= 10 (task-1 "day12_sample1.txt"))
-  (= 19 (task-1 "day12_sample2.txt"))
-  (= 226 (task-1 "day12_sample3.txt"))
-  (= 4775 (task-1 "day12_input.txt"))
-
+  (= 10 (count (task-1 "day12_sample1.txt")))
+  (= 19 (count (task-1 "day12_sample2.txt")))
+  (= 226 (count (task-1 "day12_sample3.txt")))
+  (= 4775 (count (task-1 "day12_input.txt")))
 
   (= 36 (count (task-2 "day12_sample1.txt")))
   (= 103 (count (task-2 "day12_sample2.txt")))
