@@ -82,3 +82,11 @@ list and I didn't want to fight with it, so that's a spot to revisit.
 *** Day 13
 
 Super easy, just map over the coords doing the transforms then plot out the points.
+
+*** Day 14
+
+Task 1 was easy, got the wrong answer before I realized I was still running it
+on the sample rather than my actual input.
+
+For Task 2 just following the rules won't do the trick, it'll take far too long
+and probably blow out available memory.
