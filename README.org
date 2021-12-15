@@ -90,3 +90,9 @@ on the sample rather than my actual input.
 
 For Task 2 just following the rules won't do the trick, it'll take far too long
 and probably blow out available memory.
+
+I realized how stupid I was being early today at work, made the mistake I didn't
+make with the lantern fish. Wound up re-writing the whole thing, it's fairly
+gnarly but it works and returns the task 2 answer immediately.
+
+Another candidate to refactor for clarity.
