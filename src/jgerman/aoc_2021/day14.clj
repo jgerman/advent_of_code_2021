@@ -25,12 +25,12 @@
   (-> resource utils/resource->text (str/split #"\n\n") build-input))
 
 (defn calc [state]
-  (let [coll (sort
-              (vals (reduce (fn [acc [[ele _] cnt]]
-                              (update acc ele (fn [v] ((fnil + 0) v cnt))))
-                            {}
-                            (seq state))))]
-    (- (last coll) (first coll))))
+  (let [freqs
+        (vals (reduce (fn [acc [[ele _] cnt]]
+                        (update acc ele (fn [v] ((fnil + 0) v cnt))))
+                      {}
+                      (seq state)))]
+    (- (apply max freqs) (apply min freqs))))
 
 (defn step [rules state]
   (reduce (fn [acc [pair cnt]]
@@ -58,5 +58,8 @@
 (comment
   (= 3259 (task-1 "day14_input.txt" 10))
   (= 3459174981021 (task-1 "day14_input.txt" 40))
+
   ;; marker
   )
+
+;;20,890,720,927,745
