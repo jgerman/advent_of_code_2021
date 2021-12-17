@@ -115,3 +115,18 @@ Pretty straightforward to write.
 Got cute with the eval logic.. and it burned me. I do need to come back and eval
 the tree for the versions, I just saw the opportunity to calculate version
 during the parse and get it quickly and went for it.
+
+*** Day 17
+
+Brute force today, starting to sense a theme as the event goes on, I get a
+little sloppier, it's fine because my goal is to complete both starts on that
+day throughout. I would like to come back and clean up my solutions, but I've
+definitely started to lean more towards getting the answers and moving on.
+
+My first goal: changing my clj workflow to use deps.edn, Reveal, do less direct
+work in the repl in favor of evaluating from source files has been achieved. I
+somehow missed out on `(tap>)` which has been a huge help. Between that, the
+step debugger, and Reveal, I've been pretty happy. I'm not sure I need Reveal vs
+just dumping data to the repl via tap> but I'll bet the day I need a feature it
+has, like visualization, I'll wish I had it. On the other hand I prefer to leave
+Emacs as little as possilbe and the Reveal window takes screen real estate.
