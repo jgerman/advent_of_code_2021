@@ -44,6 +44,29 @@
             {}
             g-seq)))
 
+(defn inc-floor [g n]
+  (mat/emap (fn [v]
+              (let [tot (+ v n)]
+                (if (> tot 9)
+                  (mod tot 9)
+                  tot))) g))
+
+(defn large-row [start-g]
+  (mapv (fn [row]
+         (vec (concat row
+                      (inc-floor row 1)
+                      (inc-floor row 2)
+                      (inc-floor row 3)
+                      (inc-floor row 4))))
+       start-g))
+
+(defn build-large [g]
+  (concat (large-row g)
+          (large-row (inc-floor g 1))
+          (large-row (inc-floor g 2))
+          (large-row (inc-floor g 3))
+          (large-row (inc-floor g 4))))
+
 (defn task-1 [resource]
   (let [input (resource->input resource)
         adjacency (input->adjacency-map input)
@@ -51,8 +74,17 @@
         bounds (mat/shape input)]
     (second (alg/dijkstra-path-dist g :0-0 (point-kw (dec (first bounds)) (dec (second bounds)))))))
 
+(defn task-2 [resource]
+  (let [input (build-large (resource->input resource))
+        adjacency (input->adjacency-map input)
+        g (graph/weighted-digraph adjacency)
+        bounds (mat/shape input)]
+    (second (alg/dijkstra-path-dist g :0-0 (point-kw (dec (first bounds)) (dec (second bounds)))))))
+
 (comment
   (= 720 (task-1 "day15_input.txt"))
+  (= 315 (task-2 "day15_sample.txt"))
+  (= 3025 (task-2 "day15_input.txt"))
   ;;marker
   ,)
 

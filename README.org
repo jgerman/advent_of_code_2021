@@ -96,3 +96,22 @@ make with the lantern fish. Wound up re-writing the whole thing, it's fairly
 gnarly but it works and returns the task 2 answer immediately.
 
 Another candidate to refactor for clarity.
+
+*** Day 15
+
+I went ahead and used Loom for this, on the one hand now I know loom a little
+better, on the other I didn't implement Dijkstra's myself. This is a place to
+come back and re-implement by hand.
+
+I got a little gross with task 2, I'm sure there's an elegant way to handle the
+increased size without literally making a map of the increased size. But it was
+easy so I just bashed my way through it.
+
+*** Day 16
+
+This is just an analogue to parsing a variable field length binary file format.
+Pretty straightforward to write.
+
+Got cute with the eval logic.. and it burned me. I do need to come back and eval
+the tree for the versions, I just saw the opportunity to calculate version
+during the parse and get it quickly and went for it.
