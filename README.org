@@ -130,3 +130,24 @@ step debugger, and Reveal, I've been pretty happy. I'm not sure I need Reveal vs
 just dumping data to the repl via tap> but I'll bet the day I need a feature it
 has, like visualization, I'll wish I had it. On the other hand I prefer to leave
 Emacs as little as possilbe and the Reveal window takes screen real estate.
+
+*** Day 18
+
+What. A. Mess.
+
+I looked at this Saturday morning, realized it was just tree operations... I
+dabbled a bit with parsing the expressions then went right to zippers. By the
+time I got back to it late Saturday night I realized that I didn't know zippers
+as well as I thought.
+
+Here I am Sunday trying to catch up... that was a struggle and points to a place
+where I need more practice. I ground it out but this day's source is a mess,
+maybe even more so than day 8.
+
+First task I DNF on the day it was released. Very likely Day 19 will be the same
+but we'll see.
+
+The messy source gets worse as I go, plenty to go back and refactor and improve
+on.
+
+*** Day 19
