@@ -18,7 +18,8 @@
  #_(repl/add-libs)
  {org.clojure/clojure {:mvn/version "1.10.3"}
   net.mikera/core.matrix {:mvn/version "0.62.0"}
-  aysylu/loom {:mvn/version "1.0.2"}}
+  aysylu/loom {:mvn/version "1.0.2"}
+  instaparse/instaparse {:mvn/version "1.4.10"}}
  :aliases
  {:run-m {:main-opts ["-m" "jgerman.advent-of-code-2021"]}
   :run-x {:ns-default jgerman.advent-of-code-2021
