@@ -163,3 +163,7 @@ took it out for the sake of cleanliness.... then I had to put it back, but in a
 slightly different form.
 
 Not sure how I psyched myself in and out of that but I did :)
+
+Technically the oob should be based on both the first and last values of the
+algorithm, but I didn't bother fixing that since in the solutions so far they're
+always complementary.
