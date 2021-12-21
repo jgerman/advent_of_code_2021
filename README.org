@@ -151,3 +151,15 @@ The messy source gets worse as I go, plenty to go back and refactor and improve
 on.
 
 *** Day 19
+
+Giving myself a break on 19, if I get to it before the 25th so be it, otherwise it's not going anywhere
+
+
+*** Day 20
+
+After taking Day 19 off this was pretty easy. I initially put the oob
+calculation in, thought I had overengineered, considered just leaving it in but
+took it out for the sake of cleanliness.... then I had to put it back, but in a
+slightly different form.
+
+Not sure how I psyched myself in and out of that but I did :)
