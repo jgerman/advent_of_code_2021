@@ -167,3 +167,14 @@ Not sure how I psyched myself in and out of that but I did :)
 Technically the oob should be based on both the first and last values of the
 algorithm, but I didn't bother fixing that since in the solutions so far they're
 always complementary.
+
+
+*** Day 21
+
+Task 1 was trivial. Task 2 took me longer to wrap my head around, I made the
+mistake of looking for hints in the subreddit because I assumed some trick was
+necessasary. That wound up spinning me out a bit. I should have just built the
+tree, memoization makes it fast but it still returns in a reasonable amount of
+time without.
+
+Once I stopped trying to pre-optimize it was easy to write.
