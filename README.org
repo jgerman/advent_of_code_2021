@@ -192,3 +192,8 @@ against the full input and see what popped out, and it turned out to be the
 right answer... Something to sort out at some point I guess.
 
 This needs cleanup, and task 1 should be re-written in terms of task-2.
+
+*** Day 23
+
+First commit of this has no code, I solved it with colored cubes and graph
+paper. Which was silly in a way since I knew I'd want a solver for Part 2.
