@@ -178,3 +178,17 @@ tree, memoization makes it fast but it still returns in a reasonable amount of
 time without.
 
 Once I stopped trying to pre-optimize it was easy to write.
+
+*** Day 22
+
+Brute forced task 1, no problem.
+
+Tried a couple of wild things for task 2 then based on some hints worked out how
+to loop through adding on cubes, plus any compensation cubes for overlap, then
+how off cubes interacted.
+
+My sample 2 answer was off by 10 for some reason, on a whim I decided to try
+against the full input and see what popped out, and it turned out to be the
+right answer... Something to sort out at some point I guess.
+
+This needs cleanup, and task 1 should be re-written in terms of task-2.
