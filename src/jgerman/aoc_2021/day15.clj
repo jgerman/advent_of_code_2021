@@ -82,6 +82,8 @@
     (second (alg/dijkstra-path-dist g :0-0 (point-kw (dec (first bounds)) (dec (second bounds)))))))
 
 (comment
+  (def input (resource->input "day15_sample.txt"))
+  (input->adjacency-map input)
   (= 720 (task-1 "day15_input.txt"))
   (= 315 (task-2 "day15_sample.txt"))
   (= 3025 (task-2 "day15_input.txt"))

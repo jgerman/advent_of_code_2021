@@ -36,6 +36,7 @@
 
 
 (comment
+
   (= 1400 (day1-task1))
   (= 1429 (day1-task2))
   ,)
