@@ -1,8 +1,6 @@
 (ns jgerman.aoc-2021.day3
   (:require [jgerman.aoc-2021.utils :as utils]))
 
-
-
 (defn char-in-pos [strings pos]
   (map (fn [s]
          (nth s pos))
